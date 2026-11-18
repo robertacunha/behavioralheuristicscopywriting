@@ -6,7 +6,7 @@
 <title>Copy Audit Lab</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75,800;75,900&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* Layout idea: an editor's marked-up proof. Copy on the left gets blue-pencil edit marks, the verdict sits on a 0 to 100 ruler on the right, and six numbered heuristics follow like an audit report. */
 :root {
@@ -22,8 +22,8 @@
   --good: #23885a;
   --warn: #b26f12;
   --bad: #c2413b;
-  --font-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
   color-scheme: light;
 }
@@ -66,10 +66,10 @@ textarea:focus, select:focus, input:focus { border-color: var(--pencil); outline
 label, .label { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--pencil); }
 
 /* Type */
-h1 { font-family: var(--font-display); font-weight: 900; font-stretch: 75%; font-size: clamp(48px, 7.4vw, 96px); line-height: .9; letter-spacing: -0.01em; text-transform: uppercase; margin: 0; }
+h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(44px, 6vw, 76px); line-height: 1; letter-spacing: -0.04em; margin: 0; }
 em { font-style: normal; }
 .hl { color: var(--pencil); }
-h2 { font-family: var(--font-display); font-weight: 900; font-stretch: 75%; font-size: 32px; line-height: 1; letter-spacing: 0; text-transform: uppercase; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: 26px; line-height: 1.15; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
 h3 { font-family: var(--font-body); font-weight: 700; font-size: 18px; letter-spacing: -0.01em; margin: 0; }
 p { margin: 0; }
 .lede { color: var(--muted); font-size: 17px; max-width: 62ch; }
@@ -92,7 +92,7 @@ p { margin: 0; }
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-left: 1px solid var(--line); }
 .stat { padding: 4px 18px; border-right: 1px solid var(--line); display: grid; gap: 4px; }
 .stat:last-child { border-right: 0; }
-.stat b { font-family: var(--font-display); font-stretch: 75%; font-size: 46px; font-weight: 900; letter-spacing: 0; line-height: 1; font-variant-numeric: tabular-nums; }
+.stat b { font-family: var(--font-display); font-size: 40px; font-weight: 800; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
 .stat span { font-size: 13px; color: var(--muted); line-height: 1.35; }
 
 /* Panels */
@@ -113,7 +113,7 @@ p { margin: 0; }
 /* Score */
 .score { position: relative; overflow: hidden; }
 .score-num { display: flex; align-items: baseline; gap: 10px; }
-.big { font-family: var(--font-display); font-weight: 900; font-stretch: 75%; font-size: clamp(96px, 11vw, 144px); line-height: .85; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.big { font-family: var(--font-display); font-weight: 800; font-size: clamp(84px, 10vw, 128px); line-height: .9; letter-spacing: -0.06em; font-variant-numeric: tabular-nums; }
 .of { font-family: var(--font-mono); color: var(--muted); font-size: 14px; }
 .tabs { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--raised); justify-self: start; }
 .tabs button { border: 0; border-radius: 999px; padding: 6px 16px; background: transparent; }
@@ -161,7 +161,7 @@ p { margin: 0; }
 .h-card[data-level="0"]::before { background: var(--bad); }
 .h-card[data-level="1"]::before { background: var(--warn); }
 .h-card[data-level="2"]::before { background: var(--good); }
-.h-num { font-family: var(--font-display); font-weight: 900; font-stretch: 75%; font-size: 52px; line-height: .9; letter-spacing: 0; color: var(--pencil); opacity: 1; font-variant-numeric: tabular-nums; }
+.h-num { font-family: var(--font-display); font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: -0.05em; color: var(--pencil); opacity: 1; font-variant-numeric: tabular-nums; }
 .h-main, .h-side { display: grid; gap: 10px; align-content: start; }
 .h-title { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
 .stamp { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; border: 1.5px solid currentColor; }
@@ -249,7 +249,7 @@ footer { font-size: 13px; color: var(--muted); display: flex; justify-content: s
 
   <header class="hero">
     <div class="hero-text reveal">
-      <h1><span class="hl">Copy Audit</span><br>Lab</h1>
+      <h1><span class="hl">Copy Audit</span> Lab</h1>
       <p class="lede">Six behavioral heuristics, one rating each. Automated checks mark buzzwords, vague proof and weak calls to action. The rest is rated by hand or with AI. Every gap becomes a rewrite item, and each rewrite is compared with the original on the same checks.</p>
     </div>
     <div class="stats reveal d1" aria-label="What the scorecard is built on">
