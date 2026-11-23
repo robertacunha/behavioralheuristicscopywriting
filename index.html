@@ -629,7 +629,6 @@ function renderHeuristics() {
       <div class="h-main">
         <div class="h-title"><h3>${esc(h.name)}</h3><div class="row">${stamp(e.v)}${e.src && e.src !== "you" ? `<span class="chip src-${e.src}">${e.src === "auto" ? "rules" : "AI"}</span>` : ""}</div></div>
         <p class="q">${esc(h.question)}</p>
-        <div class="row"><span class="chip">${esc(h.tier)}</span><span class="chip">${esc(h.mode)}</span></div>
         <ul class="signals">${signalsFor(h.id, a).map(s => `<li>${esc(s)}</li>`).join("")}</ul>
       </div>
       <div class="h-side">
